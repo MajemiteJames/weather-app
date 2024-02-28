@@ -16,15 +16,24 @@
                 >Options</label
               >
             </div>
-            <select class="custom-select" id="inputGroupSelect01">
-              <option selected>Choose...</option>
-              <option value="TOP">KANSAS</option>
-              <option value="LWX">COLUMBIA</option>
+            <select
+              class="custom-select"
+              id="inputGroupSelect01"
+              #mySelect
+              style="width: 30vw"
+            >
+              <option selected>Choose</option>
+              <option value="TOP">Kansas Forecast</option>
+              <option value="LWX">District of Columbia Forecast</option>
             </select>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-customized">
+        <button
+          (click)="getSelectedValue(mySelect.value)"
+          type="submit"
+          class="btn btn-primary btn-customized"
+        >
           Get Weather Details
         </button>
         <!-- End input fields -->

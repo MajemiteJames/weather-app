@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class WeatherApiService {
+export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  getWeatherForecast(location: string): Observable<any> {
-    const url = `https://api.weather.gov/gridpoints/${location}/forecast`;
-    return this.http.get(url);
+  getForecast(location: string): Observable<any> {
+    const apiUrl = `https://api.weather.gov/gridpoints/${location}/31,80/forecast`;
+    return this.http.get(apiUrl);
   }
 }
